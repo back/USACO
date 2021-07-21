@@ -34,7 +34,7 @@ public class dualpal {
                     palCount++;
                     if (palCount == 2) {
                         // Aha, we found a dual palindrome!
-                        System.out.println(s);
+                        //System.out.println(s);
                         fw.write(s + "\n");
                         n--;
                         break;
