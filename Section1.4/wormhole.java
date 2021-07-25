@@ -1,5 +1,4 @@
 /*
-ID: royone1
 LANG: JAVA
 TASK: wormhole
 */
@@ -43,7 +42,7 @@ public class wormhole {
         m_pair = new int[m.length];
         for(int i=0;i<m_pair.length;i++)m_pair[i]=i;
 
-        search(0);
+        search(0); // recursive DFS for all the combinations of wormhole pairs
 
         FileWriter fw = new FileWriter(new File("wormhole.out"));
         fw.write(answer + "\n");
