@@ -10,8 +10,9 @@ with open(fileName + '.in') as fin, open(fileName + '.out', 'w') as fout:
     total = N*(N+1)//2
     lst = [1] + [0]*(total//2)
     if total % 2 != 0:
-        fout.write('0\n')#it should add up to total and for that to have two equal sums, it should be total/2, but that should be an integer
-
+        #it should add up to total and for that to have two equal sums,
+        #it should be total/2, but that should be an integer
+        fout.write('0\n')
     else:#recursive approach
         total //= 2
         for i in range(1, N + 1):

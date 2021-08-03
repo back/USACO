@@ -44,3 +44,22 @@ for(int i = 1; i <= n; i++){
   - Iterating through all subsets of size k of the input elements: $O(n^k)$
     - For example, iterating through all triplets is $O(n^3)$.
   - Iterating through all permutations: $O(n!)$
+
+### Some Rough Estimations for Contest
+
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Possible complexities|
+|-----------------------|---------------------|
+|$n \le 10$|$\mathcal{O}(n!)$, $\mathcal{O}(n^7)$, $\mathcal{O}(n^6)$|
+|$n \le 20$|$\mathcal{O}(2^n \cdot n)$, $\mathcal{O}(n^5)$|
+|$n \le 80$|$\mathcal{O}(n^4)$$n \le 400$$\mathcal{O}(n^3)$|
+|$n \le 7500$|$\mathcal{O}(n^2)$|
+|$n \le 7 \cdot 10^4$|$\mathcal{O}(n \sqrt n)$|
+|$n \le 5 \cdot 10^5$|$\mathcal{O}(n \log n)$|
+|$n \le 5 \cdot 10^6$|$\mathcal{O}(n)$|
+|$n \le 10^{18}$|$\mathcal{O}(\log^2 n)$, $\mathcal{O}(\log n)$, $\mathcal{O}(1)$|
+
+### A Youtube Short
+
+- [BigO by William Fiset](https://youtu.be/zUUkiEllHG0)
+- [CS Dojo by Brilliant.org](https://youtu.be/D6xkbGLQesk)
+

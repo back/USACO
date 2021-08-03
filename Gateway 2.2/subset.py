@@ -1,5 +1,4 @@
 """
-
 LANG: PYTHON3
 TASK: subset
 """
