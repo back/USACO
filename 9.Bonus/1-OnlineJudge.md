@@ -6,7 +6,7 @@
 题量大，经常作为题库的OJ：
 - [POJ](http://poj.org/)
 - [ZOJ](https://zoj.pintia.cn/)
-- [HDU](http://acm.hdu.edu.cn/)
+- [HDU](https://acm.hdu.edu.cn/listproblem.php?vol=1)
 - [SPOJ](http://www.spoj.com/)
 - [UVaOJ](https://uva.onlinejudge.org/)
 

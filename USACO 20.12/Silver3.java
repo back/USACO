@@ -1,0 +1,2 @@
+public class Silver3 {
+}
