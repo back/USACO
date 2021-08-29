@@ -8,6 +8,7 @@ LANG: C++
 #include <unordered_map>
 #include <string>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -18,9 +19,11 @@ int main()
     int num;
     fin >> num;
     string name;
+    vector<string> names;
     unordered_map<string, int> m1;
     for (int i = 0; i < num; i++) {
         fin >> name;
+        names.push_back(name);
         m1[name] = 0;
     }
 
@@ -43,7 +46,7 @@ int main()
         }
     }
 
-    for (auto& e : m1) {
-        fout << e.first << " " << e.second << endl;
+    for (auto& e : names) {
+        fout << e << " " << m1[e] << endl;
     }
 }

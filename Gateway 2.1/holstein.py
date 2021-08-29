@@ -1,5 +1,4 @@
 """
-
 LANG: PYTHON3
 TASK: holstein
 """
@@ -21,4 +20,3 @@ with open(fileName + '.in') as fin, open(fileName + '.out', 'w') as fout:
         if pool:
             pool = [p+[i] for p in pool for i in range(p[-1]+1, g)]
 
- 
