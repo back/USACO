@@ -3,34 +3,30 @@ import sys
 n=int(sys.stdin.readline())
 p=[list(map(int, sys.stdin.readline().split())) for _ in range(n)]
 
-def checkOrder(a, b):
-    # is cow(a) prefer b?
-    for x in p[a-1]:
-        if x==b:
-            return True
-        elif x==a:
-            return False
-
-g=[[0] * (n+1) for _ in range(n+1)]
-
-# double loop for each pair of cows:
-for i in range(1, n+1):
-    for j in range(i+1, n+1):
-        if checkOrder(i, j) and checkOrder(j, i):
-            g[i][j] = g[j][i] = 1
+# get prefered gifts:
+g=[[0] * n for _ in range(n)]
+for i in range(n):
+    for j in range(n):
+        g[i][p[i][j]-1] = 1
+        if p[i][j]==i+1:
+            break
             
+# check for pairs could be swapped:
+s=[[0] * n for _ in range(n)]
+for i in range(n):
+    for j in range(n):
+        if g[i][j] and g[j][i]:
+            s[i][j] = s[j][i] = 1    
+
 # Floyd-Warshall
-for k in range(1, n+1):
-    for i in range(1, n+1):
-        for j in range(1, n+1):
-            if i!=j and g[i][j]==0 and g[i][k] and g[k][j]:
-                if checkOrder(i, j):
-                    g[i][j] = 1
-                if checkOrder(j, i):
-                    g[j][i] = 1
-        
-for i in range(1, n+1):
-    for x in p[i-1]:
-        if g[i][x] or x == i:
-            print(x)
+for k in range(n):
+    for i in range(n-1):
+        for j in range(i+1, n):
+            if k!=i and k!=j and g[i][j]==0 and g[i][k] and g[k][j]:
+                s[i][j] = s[j][i] = 1
+
+for i in range(n):
+    for j in range(n):
+        if s[i][p[i][j]-1]:
+            print(p[i][j])
             break
