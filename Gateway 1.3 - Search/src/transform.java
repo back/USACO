@@ -53,6 +53,9 @@ public class transform {
         char[][] result = new char[n][n];
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
+                
+                
+                
                 if (method == 1)
                     result[i][j] = origin[n - j - 1][i];
                 else if (method == 2)
@@ -61,6 +64,9 @@ public class transform {
                     result[i][j] = origin[j][n - i - 1];
                 else if (method == 4)
                     result[i][j] = origin[i][n - j - 1];
+ 
+        
+        
         return result;
     }
 
