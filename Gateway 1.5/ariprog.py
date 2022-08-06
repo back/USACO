@@ -1,13 +1,8 @@
 """
-
 LANG: PYTHON3
 TASK: ariprog
 """
 from operator import itemgetter
-
-
-import time
-start = time.time()
 
 fileName = 'ariprog'
 with open(fileName + '.in') as fin, open(fileName + '.out', 'w') as fout:
@@ -39,4 +34,3 @@ with open(fileName + '.in') as fin, open(fileName + '.out', 'w') as fout:
     else:
         fout.write('NONE\n')
 
-print('time: %s' % (time.time() - start) )
