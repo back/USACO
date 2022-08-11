@@ -1,3 +1,5 @@
+# https://cses.fi/problemset/task/1660/
+
 import sys
 
 n, m = map(int, sys.stdin.readline().split())
@@ -14,4 +16,3 @@ for r in range(n):
         count += 1
 
 print(count)
-
