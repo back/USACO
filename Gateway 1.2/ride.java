@@ -29,9 +29,6 @@ public class ride {
         int result2 = code2 % 47;
 
         FileWriter fw = new FileWriter("ride.out");
-        // PrintWriter pw = new PrintWriter(new File("ride.out"));
-        // pw.print()
-        // pw.println()
         if (result == result2) {
             System.out.println("GO");
             fw.write("GO\n");

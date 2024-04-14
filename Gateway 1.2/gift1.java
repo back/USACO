@@ -13,14 +13,14 @@ public class gift1 {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(new File("gift1.in"));
         int n = sc.nextInt();
-        sc.nextLine();
+        sc.nextLine();  // need to be put extra causions here!
 
         String[] names = new String[n];
         for (int i = 0; i < n; i++) {
             names[i] = sc.nextLine();
         }
 
-        // name: money,   name:money, name: money
+        // name: money, name:money, name: money
         HashMap<String, Integer> pockets = new HashMap<>();  
         for (String s : names) {
             pockets.put(s, 0);
@@ -37,8 +37,8 @@ public class gift1 {
                 for (int j = 0; j < shareCount; j++) {
                     receivers[j] = sc.nextLine();
                 }
-                int moneyForOne = cashOut / shareCount;
-                int remainder = cashOut % shareCount;
+                int moneyForOne = cashOut / shareCount;  // 100 / 3 = 33
+                int remainder = cashOut % shareCount;    // 100 % 3 = 1
                 for (String receiver : receivers) {
                     int currentbalance = pockets.get(receiver);
                     currentbalance += moneyForOne;

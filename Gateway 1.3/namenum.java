@@ -24,10 +24,14 @@ public class namenum {
         while(sc.hasNextLine()){
             String name = sc.nextLine(); // e.g. "GREG"
             String code = "";
+            
             for (char c : name.toCharArray())  // loop through: ['G', 'R', 'E', 'G']
-                 code += mapV.charAt(mapK.indexOf(c));
+                 code = code + mapV.charAt(mapK.indexOf(c));
+            
+            // code now holds: "4734"
+            
             if (serial.equals(code)) {
-                fw.write(name + "\n");
+                fw.write(name + '\n');
                 found = true;
             }
         }

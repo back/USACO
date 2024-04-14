@@ -1,10 +1,8 @@
-"""
-
+fileName="""
 LANG: PYTHON3
 TASK: crypt1
-"""
+""".split()[-1]
 
-fileName = 'crypt1'
 with open(fileName + '.in') as fin, open(fileName + '.out', 'w') as fout:
 
     fin.readline()

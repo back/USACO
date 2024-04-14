@@ -1,9 +1,8 @@
-"""
+fileName="""
 LANG: PYTHON3
 TASK: milk
-"""
+""".split()[-1]
 
-fileName = 'milk'
 with open(fileName + '.in') as fin, open(fileName + '.out', 'w') as fout:
 
     unitNeed, m = map(int, fin.readline().split())

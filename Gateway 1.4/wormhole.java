@@ -30,7 +30,7 @@ public class wormhole {
         }
 
         m_next = new int[m.length];
-        Arrays.fill(m_next, -1);
+        Arrays.fill(m_next, -1);    // we cannot use default value '0' here, since it means a real gate
 
         for(int i=0; i<m_next.length; i++)
             for (int j=0; j<m_next.length; j++)
@@ -49,7 +49,7 @@ public class wormhole {
         fw.close();
     }
 
-    static void search(int start) {
+    static void search(int start) { // recursive search method to look up EVERY possible combinations of pairing...
         boolean changed = false;
         for (int i = start; i < m_pair.length; i++) {
             if(m_pair[i]==i) {
@@ -58,7 +58,7 @@ public class wormhole {
                         changed = true;
                         m_pair[i] = j;
                         m_pair[j] = i;
-                        search(i + 1);
+                        search(i + 1);   // main feature of "recursive" functions. It calls itself.
                         m_pair[i] = i;
                         m_pair[j] = j;
                     }
@@ -66,7 +66,7 @@ public class wormhole {
                 break;
             }
         }
-        if (!changed) checkLoop();
+        if (!changed) checkLoop();    // when we hit here, it mean a fully paired "m_pair" has been found.
     }
 
     static void checkLoop() {
@@ -74,7 +74,7 @@ public class wormhole {
             int pos = i, steps=n;
             while(steps-- >= 0 && pos >= 0)
                 pos = m_next[m_pair[pos]];
-            if (pos > -1) {
+            if (pos > -1) {  // we found a loop hole for Bessie, since after n steps, pos is still pointing to some gate...
                 answer++;
                 break;
             }

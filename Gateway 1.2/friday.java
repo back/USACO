@@ -5,19 +5,17 @@ TASK: friday
 */
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class friday {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(new File("friday.in"));
         int n = sc.nextInt();
 
-        int[] results = new int[7];
-        int d = 13 - 31;
+        int[] results = new int[7]; // a list will hold weekdays count for: Saturday, Sunday, Monday, Tuesday, ..., Friday.
+        int d = 13 - 31;  // just make the below loop easier to start.
 
         for (int year = 1900; year < 1900 + n; year++)
             for (int month = 1; month < 13; month++) {
@@ -40,12 +38,15 @@ public class friday {
             }
 
         FileWriter fw = new FileWriter(new File("friday.out"));
-        StringBuffer sb = new StringBuffer();
-
-        for (int i : results) sb.append(i).append(' ');
-        sb.replace(sb.length()-1,sb.length(),"\n");
-
-        fw.write(sb.toString());
+        for(int i = 0; i<7; i++) {
+            if (i==0)
+                fw.write(results[i]);
+            else {
+                fw.write(' ');
+                fw.write(results[i]);
+            }
+        }
+        fw.write('\n');
         fw.close();
     }
 }
